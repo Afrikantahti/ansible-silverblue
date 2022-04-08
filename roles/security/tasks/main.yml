@@ -1,0 +1,18 @@
+---
+# tasks file for security
+
+- name: Set dmz as default policy
+  become: yes
+  become_method: sudo
+  command: firewall-cmd --set-default-zone=block
+
+- name: Enable Firewall
+  become: yes
+  become_method: sudo
+  command: systemctl enable firewalld.service
+
+- name: Disable sshd
+  become: yes
+  become_method: sudo
+  command: systemctl disable sshd.service
+

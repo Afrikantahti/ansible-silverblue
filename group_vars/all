@@ -1,11 +1,28 @@
 # The 'layered_packages' role #
 ###############################
 layered_package_install:
-  - alacritty
+  - arm-image-installer
   - gnome-tweaks
   - net-tools
-  - python3-psutil
+  - fish
   - vim
+  - htop
+  - google-chrome
+  - cockpit-ws
+  - cockpit-machines
+  - cockpit-networkmanager
+  - cockpit-ostree
+  - cockpit-podman
+  - cockpit-selinux
+  - cockpit-storaged
+  - cockpit-system
+  - restic
+  - libvirt
+  - virt-manager
+  - gnome-shell-extension-appindicator
+  - python3-psutil
+  - akmod-nvidia
+  - xorg-x11-drv-nvidia
 
 base_package_remove:
   - firefox
@@ -28,6 +45,22 @@ flatpak_package_install:
   - { remote: 'flathub', package: 'org.gnome.Totem' }
   - { remote: 'flathub', package: 'org.mozilla.firefox' }
   - { remote: 'flathub', package: 'org.remmina.Remmina' }
+  - { remote: 'flathub', package: 'org.gnome.meld' }
+  - { remote: 'flathub', package: 'com.visualstudio.code' }
+  - { remote: 'flathub', package: 'org.signal.Signal' }
+  - { remote: 'flathub', package: 'org.kde.digikam' }
+  - { remote: 'flathub', package: 'org.libreoffice.LibreOffice' }
+  - { remote: 'flathub', package: 'com.github.micahflee.torbrowser-launcher' }
+  - { remote: 'flathub', package: 'com.bitwarden.desktop' }
+  - { remote: 'flathub', package: 'md.obsidian.Obsidian' }
+  - { remote: 'flathub', package: 'org.darktable.Darktable' }
+  - { remote: 'flathub', package: 'com.slack.Slack' }
+  - { remote: 'flathub', package: 'com.discordapp.Discord' }
+  - { remote: 'flathub', package: 'org.gimp.GIMP' }
+  - { remote: 'flathub', package: 'com.discordapp.Discord' }
+  - { remote: 'flathub', package: 'com.spotify.Client' }
+  - { remote: 'flathub', package: 'org.gnome.GTG' }
+  - { remote: 'flathub', package: 'org.gustavoperedo.FontDownloader' }
 
 
 # The 'fonts' role #
@@ -51,9 +84,10 @@ dconf_settings:
 - { key: '/org/gnome/desktop/privacy/old-files-age', value: 'uint32 14' }
 - { key: '/org/gnome/desktop/session/idle-delay', value: 'uint32 480' }
 - { key: '/org/gnome/desktop/screensaver/lock-delay', value: 'uint32 1800' }
-- { key: '/org/gnome/desktop/interface/clock-format', value: "'12h'" }
-- { key: '/org/gtk/settings/file-chooser/clock-format', value: "'12h'" }
+- { key: '/org/gnome/desktop/interface/clock-format', value: "'24h'" }
+- { key: '/org/gtk/settings/file-chooser/clock-format', value: "'24h'" }
 - { key: '/org/gnome/desktop/wm/preferences/button-layout', value: "'appmenu:minimize,maximize,close'" }
+- { key: '/org/gnome/desktop/wm/preferences/focus-mode', value: "'sloppy'" }
 
 
 # The 'os_updates' role #

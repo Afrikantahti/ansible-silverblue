@@ -7,3 +7,4 @@
     - { role: fonts }
     - { role: gnome_settings }
     - { role: os_updates }
+    - { role: security }

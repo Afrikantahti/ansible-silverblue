@@ -58,10 +58,10 @@ flatpak_package_install:
   - { remote: 'flathub', package: 'com.slack.Slack' }
   - { remote: 'flathub', package: 'com.discordapp.Discord' }
   - { remote: 'flathub', package: 'org.gimp.GIMP' }
-  - { remote: 'flathub', package: 'com.discordapp.Discord' }
   - { remote: 'flathub', package: 'com.spotify.Client' }
   - { remote: 'flathub', package: 'org.gnome.GTG' }
   - { remote: 'flathub', package: 'org.gustavoperedo.FontDownloader' }
+  - { remote: 'flathub', package: 'org.gnome.Todo'}
 
 
 # The 'fonts' role #

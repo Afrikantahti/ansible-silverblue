@@ -77,7 +77,7 @@ install_fonts:
 
 # The 'settings' role #
 #######################
-dconf_settings:
+gnome_settings:
 - { key: '/org/gnome/settings-daemon/plugins/color/night-light-enabled', value: 'true' }
 - { key: '/org/gnome/desktop/privacy/remember-recent-files', value: 'true' }
 - { key: '/org/gnome/desktop/privacy/remove-old-trash-files', value: 'true' }

@@ -31,7 +31,7 @@ Setup
 
 Clone this repository with:
 
-  - `git clone https://github.com/j1mc/ansible-silverblue.git`
+  - `git clone https://github.com/Afrikantahti/ansible-silverblue.git`
 
 Install needed dependencies with:
 

@@ -66,6 +66,7 @@
   ansible.builtin.command: rpm-ostree override remove {{ item }}
   become: yes
   become_method: sudo
+  ignore_errors: yes
   loop: "{{ base_package_remove }}"
 
 - debug:

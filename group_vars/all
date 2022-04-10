@@ -92,6 +92,8 @@ gnome_settings:
 - { key: '/org/gnome/desktop/wm/preferences/visual-bell', value: "false" }
 - { key: '/org/gnome/desktop/wm/preferences/visual-bell-type', value: "'fullscreen-flash'" }
 - { key: '/org/gnome/settings-daemon/plugins/media-keys/terminal', value: "['<Primary>t']" }
+- { key: '/org/gnome/desktop/interface/show-battery-percentage', value: "true" }
+- { key:   '/org/gnome/desktop/calendar/show-weekdate', value: "true" }
 
 # The 'os_updates' role #
 #########################

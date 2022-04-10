@@ -8,3 +8,4 @@
     - { role: gnome_settings }
     - { role: os_updates }
     - { role: security }
+    - { role: git_packages }

@@ -7,3 +7,28 @@
     content: |
       #!/bin/sh
       curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sudo sh
+
+- name: Manual Install pci pass throught
+  copy:
+    dest: "~/install_vfio_passthrought.sh"
+    content: |
+      #!/bin/bash
+      shopt -s nullglob
+      for g in `find /sys/kernel/iommu_groups/* -maxdepth 0 -type d | sort -V`; do
+        echo "IOMMU Group ${g##*/}:"
+        for d in $g/devices/*; do
+          echo -e "\t$(lspci -nns ${d##*/})" | grep 'VGA\|HDMI'
+        done;
+      done;
+
+      echo "Before run this script, edit and reboot:"
+      echo "add_drivers+=' vfio vfio_iommu_type1 vfio_pci vfio_virqfd '"
+      echo "in" 
+      echo "/etc/dracut.conf.d/vfio.conf"
+      echo "###"
+      echo "After reboot edit kargs. Example"
+      echo "rpm-ostree initramfs –-enable"
+      echo "reboot"
+      echo "rpm-ostree kargs --append='amd_iommu=pt rd.driver.pre=vfio-pci vfio-pci.ids=1002:73af,1002:ab28 video=efifb:off'"
+      echo "###"
+      echo "check sudo lspci -nv, vfio drivers should be active"

@@ -62,7 +62,11 @@ flatpak_package_install:
   - { remote: 'flathub', package: 'org.gnome.GTG' }
   - { remote: 'flathub', package: 'org.gustavoperedo.FontDownloader' }
   - { remote: 'flathub', package: 'org.gnome.Todo'}
+  - { remote: 'flathub', package: 'com.synology.SynologyDrive'}
+  - { remote: 'flathub', package: 'de.haeckerfelix.Shortwave'}
+  - { remote: 'flathub', package: 'com.brave.Browser'}
 
+  ## TODO flatpack all browsers
 
 # The 'fonts' role #
 ####################

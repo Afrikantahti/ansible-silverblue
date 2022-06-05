@@ -25,6 +25,7 @@ layered_package_install:
   - python3-psutil
   - akmod-nvidia
   - xorg-x11-drv-nvidia
+  - containernetworking-plugins
 
 base_package_remove:
   - firefox

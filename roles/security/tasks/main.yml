@@ -8,16 +8,6 @@
   become_method: sudo
   command: firewall-cmd --set-default-zone=block
 
-- name: Make rules and zone permanent
-  become: yes
-  become_method: sudo
-  command: firewall-cmd --get-service --permanent
-
-- name: Enable Firewall
-  become: yes
-  become_method: sudo
-  command: systemctl enable firewalld.service
-
 - name: Disable sshd
   become: yes
   become_method: sudo
@@ -131,30 +121,6 @@
     - no_empty_passwords
     - no_reboot_needed
 
-- name: Ensure nullok property is absent via authselect tool
-  ansible.builtin.command:
-    cmd: authselect enable-feature without-nullok
-  register: result_authselect_cmd
-  when:
-    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-    - result_authselect_present.stat.exists
-    - result_authselect_check_cmd is success
-    - result_authselect_features.stdout is not search("without-nullok")
-  tags:
-    - CJIS-5.5.2
-    - NIST-800-171-3.1.1
-    - NIST-800-171-3.1.5
-    - NIST-800-53-CM-6(a)
-    - NIST-800-53-IA-5(1)(a)
-    - NIST-800-53-IA-5(c)
-    - PCI-DSS-Req-8.2.3
-    - configure_strategy
-    - high_severity
-    - low_complexity
-    - medium_disruption
-    - no_empty_passwords
-    - no_reboot_needed
-
 - name: Informative message based on the authselect integrity check result
   ansible.builtin.assert:
     that:
@@ -169,31 +135,6 @@
     success_msg:
       - authselect integrity check passed
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-  tags:
-    - CJIS-5.5.2
-    - NIST-800-171-3.1.1
-    - NIST-800-171-3.1.5
-    - NIST-800-53-CM-6(a)
-    - NIST-800-53-IA-5(1)(a)
-    - NIST-800-53-IA-5(c)
-    - PCI-DSS-Req-8.2.3
-    - configure_strategy
-    - high_severity
-    - low_complexity
-    - medium_disruption
-    - no_empty_passwords
-    - no_reboot_needed
-
-- name: Ensure nullok property is absent by directly editing pam files
-  replace:
-    dest: '{{ item }}'
-    regexp: nullok
-  loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-  when:
-    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
-    - not result_authselect_present.stat.exists
   tags:
     - CJIS-5.5.2
     - NIST-800-171-3.1.1

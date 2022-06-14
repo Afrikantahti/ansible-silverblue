@@ -23,8 +23,6 @@ layered_package_install:
   - virt-viewer
   - gnome-shell-extension-appindicator
   - python3-psutil
-  - akmod-nvidia
-  - xorg-x11-drv-nvidia
   - containernetworking-plugins
   - screen
 

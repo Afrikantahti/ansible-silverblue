@@ -66,7 +66,7 @@ flatpak_package_install:
   - { remote: 'flathub', package: 'com.synology.SynologyDrive'}
   - { remote: 'flathub', package: 'de.haeckerfelix.Shortwave'}
   - { remote: 'flathub', package: 'com.brave.Browser'}
-
+  - { remote: 'flathub', package: 'com.logseq.Logseq'}
   ## TODO flatpack all browsers
 
 # The 'fonts' role #

@@ -27,6 +27,21 @@
       gpgcheck=1
       gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
 
+- name: Tailscale
+  become: yes
+  become_method: sudo
+  copy:
+    dest: "/etc/yum.repos.d/tailscale.repo"
+    content: |
+      [tailscale-stable]
+      name=Tailscale stable
+      baseurl=https://pkgs.tailscale.com/stable/fedora/$basearch
+      enabled=1
+      type=rpm
+      repo_gpgcheck=1
+      gpgcheck=0
+      gpgkey=https://pkgs.tailscale.com/stable/fedora/repo.gpg
+
 - name: Helix text editor
   become: yes
   become_method: sudo

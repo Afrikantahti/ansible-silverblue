@@ -46,12 +46,16 @@
     content: |
       PermitEmptyPasswords no
       PermitRootLogin no
-      # CHANGE Wireguard ip
+      PermitRootLogin prohibit-password
+      # CHANGE Wireguard ip or tailscale ip
       # ListenAddress 192.168.86.20
 
       # Enable after keys
       # PasswordAuthentication no
       PubkeyAuthentication yes
+      ChallengeResponseAuthentication no
+      PasswordAuthentication no
+      UsePAM no
 
 - name: Check if system relies on authselect
   ansible.builtin.stat:

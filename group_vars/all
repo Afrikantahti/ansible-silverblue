@@ -36,7 +36,7 @@ flatpak_remote_install:
   - { name: 'flathub', url: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }                 # Flathub
   - { name: 'fedora', url: 'oci+https://registry.fedoraproject.org' }                          # Fedora
   - { name: 'flathub-beta', url: 'https://flathub.org/beta-repo/flathub-beta.flatpakrepo' }    # Flathub Beta
-  - { name: 'gnome-nightly', url: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo' }      # GNOME nightly    
+#  - { name: 'gnome-nightly', url: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo' }      # GNOME nightly    
 #  - { name: 'kdeapps', url: 'https://distribute.kde.org/kdeapps.flatpakrepo' }                 # KDE applications
 
 flatpak_package_install:

@@ -14,19 +14,6 @@
       gpgcheck=1
       gpgkey=https://rpm.releases.teleport.dev/RPM-GPG-KEY-teleport
 
-- name: Vivaldi browser
-  become: yes
-  become_method: sudo
-  copy:
-    dest: "/etc/yum.repos.d/vivaldi.repo"
-    content: |
-      [vivaldi]
-      name=vivaldi
-      enabled=1
-      baseurl=https://repo.vivaldi.com/archive/rpm/$basearch
-      gpgcheck=1
-      gpgkey=https://repo.vivaldi.com/archive/linux_signing_key.pub
-
 - name: Tailscale
   become: yes
   become_method: sudo

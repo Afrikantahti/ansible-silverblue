@@ -27,6 +27,11 @@ layered_package_install:
   - screen
   - kmod-nvidia
   - xorg-x11-drv-nvidia
+  - libimobiledevice-utils
+  - usbmuxd
+# nvidia 
+# sudo rpm-ostree kargs --append=nvidia-drm.modeset=1
+#  - libimobiledevice-utils
 
 base_package_remove:
   - firefox

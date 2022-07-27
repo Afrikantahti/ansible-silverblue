@@ -2,7 +2,6 @@
 ###############################
 layered_package_install:
   - arm-image-installer
-  - gnome-tweaks
   - net-tools
   - fish
   - vim
@@ -21,7 +20,6 @@ layered_package_install:
   - libvirt
   - virt-manager
   - virt-viewer
-  - gnome-shell-extension-appindicator
   - python3-psutil
   - containernetworking-plugins
   - screen
